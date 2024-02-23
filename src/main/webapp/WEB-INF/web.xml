@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>bookProject</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 컨텍스트 초기화 매개변수 web.xml 추가 설정 -->
+  <context-param> <!-- 톰켓이 동작할 때 변수와 값을 제공한다. -->
+  	<param-name>INIT_PARAM</param-name>	<!-- key -->
+  	<param-value>web.xml에 저장한 초기화 매개 변수</param-value>	<!-- value -->
+  </context-param>
+  <!-- JDBC에서 사용할 드라이버, id, pw, url을 기록한다. application.getInitParameter 꺼내씀 -->
+  <context-param>
+  	<param-name>OracleDriver</param-name>
+  	<param-value>oracle.jdbc.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleURL</param-name>
+  	<param-value>jdbc:oracle:thin:@192.168.0.208:1521:xe</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OracleId</param-name>
+  	<param-value>book</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>OraclePwd</param-name>
+  	<param-value>1234</param-value>
+  </context-param>
+  <!-- 프로젝트 별 세션 시간 설정 20분 -->
+  <session-config>
+    <session-timeout>20</session-timeout>
+  </session-config>
+  <!-- post 방식의 한글 처리를 통합하는 내용 -->
+  <filter>
+    <filter-name>SetCharEncoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+      <init-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SetCharEncoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 페이징 처리용 초기값 파라미터 설정 -->
+  <context-param>
+  	<param-name>POSTS_PER_PAGE</param-name>
+  	<param-value>10</param-value>	<!-- 화면에 출력되는 게시물 개수 -->
+  </context-param>  
+  <context-param>
+  	<param-name>PAGES_PER_BLOCK</param-name>
+  	<param-value>5</param-value>	<!-- 화면 아래쪽에 페이지블럭 개수 -->
+  </context-param>
+  <!-- 첨부 파일 최대 용량 설정(예제 14-8) -->
+  <context-param>
+    <param-name>maxPostSize</param-name>
+    <param-value>1024000</param-value>
+  </context-param>
+</web-app>

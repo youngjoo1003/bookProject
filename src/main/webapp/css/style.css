@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+* {
+   padding: 0;
+   margin: 0 auto;
+   box-sizing: border-box;
+   list-style: none;
+}
+.container {
+   width: 1080px;
+   height: 100%;
+   padding: 0 20px;
+}
+section{
+   max-width: 100%;
+   max-height: 100%;
+}
+li {
+   float: left;
+}
+a {
+   width: 100%;
+   height: 100%;
+   color: inherit;
+   text-decoration: none;
+   display: inline-block;
+}
+img{
+   max-height: 100%;
+   max-width: 100%;
+}
+body {
+   padding: 0;
+   margin: 0;
+   min-height: 100vh;
+   position: relative;
+}
+header {
+   width: 100%;
+   height: 75px;
+   line-height: 75px;
+}
+header .page-top {
+   margin: 0;
+   padding: 0;
+}
+header .logo {
+   float: left;
+   font-size: 24px;
+   font-weight: 700;
+}
+header .top-right {
+   float: right;
+
+}
+#search {
+   text-align: center;
+   width: 80%;
+   padding: 0 20px;
+   height: 50%;
+   text-align: center;
+   cursor: pointer;
+   color: black;
+}
+nav {
+   width: 100%;
+   height: 60px;
+   background-color: black;
+}
+nav #top-bar {
+   color: white;
+   text-align: center;
+}
+nav .bar {
+   padding-left: 350px;
+}
+.bar > li {
+   width: 200px;
+   padding: 0 20px;
+   height: 100%;
+   font-size: 40;
+   text-align: center;
+   line-height: 60px;
+   cursor: pointer;
+}
+.left-bar {
+   float: left;
+   height: 500px;
+   width: 15%;
+   margin: 20px;
+   margin-top: 30px;
+   padding: 80px;
+   background-color: lightgray;
+   border-color: black;
+}
+.side-bar > li {
+   text-align: center;
+   padding-right: 8px;
+   width: 90px;
+   height: 100%;
+   line-height: 60px;
+   cursor: pointer;
+}
+.section{
+   margin: 2%;
+   margin-left: 20%;
+   width: 900px;
+   height: 900px;
+   background-color: red;
+}
+.bookList{
+   width: 300px;
+   height: 420px;
+   background-color: blue;
+   
+}
+.cate{
+   font-size: 13px;
+   background-color: orange;
+   color: white;
+   text-align: center;
+   margin: 0;
+   margin-bottom: 3px;
+   width: 90px;
+   height: 20px;
+   border-radius: 40px;
+   
+}
+.book{
+   float: left;
+   margin-left: 70px;
+   padding: 0;
+   width: 200px;
+   height: 230px;
+   overflow: hidden;
+}
+.book > img{
+   padding: 5px;
+   position:absolute;
+   background-size: 500px 250px;
+}
+.desc{
+   text-align: center;
+   font-size: 30px;
+   color: black;
+}
+.detail-img{
+	width: 30%;
+	float: left;
+	padding-top: 40px;
+	padding-left: 60px;
+}
+.detail-book{
+	width: 30%;
+	height: 35;
+	float: right;
+	text-align: center;
+}
